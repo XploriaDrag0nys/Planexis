@@ -1,0 +1,130 @@
+.table-custom {
+    border: none;
+}
+
+.table-custom thead th {
+    border-bottom: 2px solid #dee2e6;
+    background-color: #f8f9fa;
+    font-weight: 600;
+}
+
+.table-custom tbody tr:hover {
+    background-color: #f1f3f5;
+}
+
+.text-truncate-popover {
+    max-width: 200px;
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    cursor: pointer;
+}
+
+.offcanvas-end {
+    width: 400px;
+}
+
+.offcanvas-header {
+    border-bottom: 1px solid #dee2e6;
+}
+
+.detail-card {
+    border: 1px solid #dee2e6;
+    border-radius: .75rem;
+    padding: 1rem;
+    box-shadow: 0 2px 6px rgba(0, 0, 0, 0.05);
+}
+
+.detail-card-header {
+    display: flex;
+    flex-direction: column;
+    gap: .25rem;
+    margin-bottom: .75rem;
+}
+
+.detail-title {
+    margin: 0;
+    font-weight: 600;
+}
+
+.detail-subtitle {
+    margin: 0;
+    color: #6c757d;
+}
+
+.nav-tabs .nav-link {
+    border: none;
+    border-bottom: 2px solid transparent;
+}
+
+.nav-tabs .nav-link.active {
+    border-color: #0d6efd;
+    color: #0d6efd;
+}
+
+/* Empêche la colonne Actions de se réduire et d’enrouler ses boutons */
+.dt-body-nowrap {
+    white-space: nowrap;
+}
+
+tfoot th:last-child {
+    text-align: center !important;
+}
+
+
+table.dataTable thead th.sorting,
+table.dataTable thead th.sorting_asc,
+table.dataTable thead th.sorting_desc {
+    display: table-cell;
+    vertical-align: middle;
+}
+
+td.avancement-cell {
+    text-align: center;
+}
+
+#actions-table thead th {
+    white-space: nowrap;
+    min-width: max-content;
+    text-align: center !important;
+    vertical-align: middle !important;
+
+}
+
+#actions-table tbody td {
+    text-align: center !important;
+    vertical-align: middle !important;
+}
+
+#actions-table tbody td>.d-flex {
+    justify-content: center;
+    align-items: center;
+}
+
+/* la “grip” que colResizable injecte via innerGripHtml */
+#actions-table .grip {
+    position: absolute;
+    /* colResizable positionne déjà .grip en absolute */
+    top: 0;
+    right: 0;
+    width: 5px;
+    height: 100%;
+    background: #ccc;
+    /* couleur de base */
+    cursor: col-resize;
+    z-index: 10;
+    transition: background .2s;
+}
+
+/* état pendant le drag (colResizable ajoute la classe .dragging) */
+#actions-table .dragging {
+    background-color: #0d6efd33 !important;
+    /* bleu clair translucide */
+}
+.readonly-field {
+  background-color: #f8f9fa;   /* gris très clair */
+  color: #6c757d;              /* texte un peu plus foncé */
+  padding: .375rem .75rem;     /* même padding que .form-control */
+  border-radius: .25rem;       /* coins arrondis */
+  margin-top: .25rem;          /* un petit espace sous le label */
+}

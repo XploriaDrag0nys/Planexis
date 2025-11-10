@@ -1,0 +1,89 @@
+/* 1. Box-sizing pour inclure padding/border dans les width */
+*, *::before, *::after {
+  box-sizing: border-box;
+}
+
+/* 2. Layout flex */
+#layout {
+  display: flex;
+}
+
+/* 3. Sidebar : on utilise flex pour fixer largeur et empêcher le shrink/grow */
+.sidebar {
+  position: relative;
+  min-height: 100vh;
+  padding: 1rem;
+  border-right: 1px solid #dee2e6;
+  background: #f8f9fa;
+  transition: flex-basis 0.3s ease;  /* on anime le flex-basis */
+  flex: 0 0 240px;                   /* grow:0; shrink:0; basis:240px */
+}
+
+/* 4. État “expanded” explicite (identique à la valeur par défaut) */
+#layout:not(.sidebar-collapsed) .sidebar {
+  flex-basis: 240px !important;
+}
+
+/* 5. État “collapsed” */
+#layout.sidebar-collapsed .sidebar {
+  flex-basis: 70px !important;
+}
+
+/* 6. Bouton toggle */
+#toggleSidebar {
+  position: absolute;
+  top: 10px;
+  right: -15px;
+  width: 30px;
+  height: 30px;
+  background: white;
+  border: 1px solid #dee2e6;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+  box-shadow: 0 0 4px rgba(0,0,0,0.1);
+  z-index: 1000;
+  transition: right 0.3s ease;
+}
+
+/* 7. Main : prendre tout l’espace restant */
+main {
+  flex: 1 1 auto;         /* grow:1, shrink:1, basis:auto */
+  min-width: 0;           /* <-- permet au main de rétrécir */
+  padding: 2rem;
+  transition: all 0.3s ease;
+}
+
+/* 8. Masquage des labels en collapsed */
+#layout.sidebar-collapsed .sidebar .label {
+  display: none !important;
+}
+
+/* 9. Affichage centré des icônes */
+#layout.sidebar-collapsed .sidebar .icon {
+  display: block !important;
+  margin: 0 auto !important;
+  font-size: 1.25rem;
+}
+
+/* 10. Pour que le bouton se recale à 55px du bord quand collapsed */
+#layout.sidebar-collapsed #toggleSidebar {
+  right: -15px;  /* reste identique, puisque la sidebar fait 70px */
+}
+
+/* 3) Centre l’icône dans le lien et ajuste le padding */
+#layout.sidebar-collapsed .sidebar .nav-link {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 0.5rem 0 !important;  /* réduit l’espace haut/bas */
+}
+
+/* 4) Même chose pour tes boutons (déconnexion, connexion) */
+#layout.sidebar-collapsed .sidebar form button,
+#layout.sidebar-collapsed .sidebar .btn.w-100 {
+  padding: 0.5rem 0 !important;
+  width: 40px !important;        /* si tu veux qu’ils soient carrés */
+}

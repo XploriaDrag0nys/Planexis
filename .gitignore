@@ -1,0 +1,32 @@
+# Laravel
+/vendor
+/node_modules
+/public/storage
+/storage/*.key
+/storage/logs
+/storage/framework/*
+/bootstrap/cache/*
+.env
+.env.backup
+.env.local
+
+# Composer & NPM
+composer.lock
+package-lock.json
+
+# IDEs & OS
+.idea/
+.vscode/
+*.sublime-project
+*.sublime-workspace
+.DS_Store
+Thumbs.db
+
+# Tests & temporary
+*.log
+*.bak
+*.tmp
+.phpunit.result.cache
+
+# Git internals
+.git/
