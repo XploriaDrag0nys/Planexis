@@ -41,7 +41,7 @@ Simple d’utilisation et intuitif, cet outil peut également être utilisé dan
 |------|--------------|
 | **Langage** | PHP |
 | **Framework** | Laravel |
-| **Base de données** | MySQL / MariaDB *(à confirmer)* |
+| **Base de données** | MySQL |
 | **Graphiques** | Chart.js *(ou autre selon implémentation)* |
 
 ---
@@ -49,12 +49,4 @@ Simple d’utilisation et intuitif, cet outil peut également être utilisé dan
 ## 🛠️ Installation
 
 > Suivez la procédure d'installation pour **Debian** afin de mettre en place l'application.  
-> *(Lien d’installation à ajouter ici)*
-
-Exemple :
-```bash
-git clone https://github.com/tonrepo/planexis.git
-cd planexis
-composer install
-php artisan migrate
-php artisan serve
+> *(Lien d’installation pas encore disponible)*
